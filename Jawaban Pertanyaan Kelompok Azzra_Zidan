@@ -1,0 +1,138 @@
+<?php
+
+// 1. Satu Kondisi Positif
+echo "<h2>1. Satu Kondisi Positif</h2>";
+$lapar = true;
+
+if ($lapar) {
+    echo "Saya akan makan";
+}
+  
+echo "<hr>";
+
+
+// 2. Satu Kondisi Negatif
+echo "<h2>2. Satu Kondisi Negatif</h2>";
+$pakaian_bersih = false;
+
+if (!$pakaian_bersih) {
+    echo "Saya akan mencuci pakaian";
+}
+
+echo "<hr>";
+
+
+// 3. Dua Kondisi
+echo "<h2>3. Dua Kondisi</h2>";
+$cuaca = "hujan";
+
+if ($cuaca == "hujan") {
+    echo "Saya akan membawa payung";
+} else {
+    echo "Saya keluar rumah tanpa membawa payung";
+}
+
+echo "<hr>";
+
+
+// 4. Lebih dari 2 Kondisi
+echo "<h2>4. Lebih dari 2 Kondisi</h2>";
+$kondisi = "lapar";
+
+if ($kondisi == "sangat lelah") {
+    echo "Saya akan segera beristirahat";
+}
+elseif ($kondisi == "agak lelah") {
+    echo "Saya akan duduk dan minum air";
+}
+elseif ($kondisi == "lapar") {
+    echo "Saya akan makan";
+}
+elseif ($kondisi == "haus") {
+    echo "Saya akan minum";
+}
+elseif ($kondisi == "segar") {
+    echo "Saya akan melanjutkan aktivitas";
+}
+else {
+    echo "Perlu istirahat dan mengecek kondisi tubuh";
+}
+
+echo "<hr>";
+
+
+// 5. Pengkondisian Bersarang (Nested IF)
+echo "<h2>5. Pengkondisian Bersarang</h2>";
+$waktu = "pagi";
+$lapar = true;
+
+if ($waktu == "pagi") {
+
+    if ($lapar) {
+        echo "Saya akan sarapan";
+    } else {
+        echo "Saya akan minum teh atau kopi";
+    }
+
+}
+elseif ($waktu == "siang") {
+
+    if ($lapar) {
+        echo "Saya akan makan siang";
+    } else {
+        echo "Saya akan melanjutkan aktivitas";
+    }
+
+}
+else {
+    echo "Waktu tidak dikenali";
+}
+
+echo "<hr>";
+
+
+// 6. Pengkondisian Menggunakan AND
+echo "<h2>6. Pengkondisian Menggunakan DAN (AND)</h2>";
+$cuaca = "cerah";
+$aktivitas = "olahraga";
+
+if ($cuaca == "cerah" && $aktivitas == "olahraga") {
+    echo "Saya akan jogging di luar rumah";
+}
+elseif ($cuaca == "hujan" && $aktivitas == "olahraga") {
+    echo "Saya akan olahraga di dalam rumah";
+}
+elseif ($cuaca == "cerah" && $aktivitas == "bersantai") {
+    echo "Saya akan duduk di taman";
+}
+elseif ($cuaca == "hujan" && $aktivitas == "bersantai") {
+    echo "Saya akan bersantai di dalam rumah";
+}
+else {
+    echo "Aktivitas disesuaikan dengan keadaan";
+}
+
+echo "<hr>";
+
+
+// 7. Pengkondisian Menggunakan OR
+echo "<h2>7. Pengkondisian Menggunakan ATAU (OR)</h2>";
+$tempat = "rumah";
+$kegiatan = "belajar";
+
+if ($tempat == "rumah") {
+
+    if ($kegiatan == "belajar" || $kegiatan == "menonton" || $kegiatan == "main hp") {
+        echo "Lakukan dengan tertib dan tidak mengganggu orang lain";
+    }
+
+}
+elseif ($tempat == "luar") {
+
+    if ($kegiatan == "belajar" || $kegiatan == "menonton" || $kegiatan == "main hp") {
+        echo "Lakukan di tempat yang aman dan nyaman";
+    }
+
+}
+
+?>
