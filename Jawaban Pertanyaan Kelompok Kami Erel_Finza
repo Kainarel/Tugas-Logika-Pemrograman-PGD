@@ -1,0 +1,127 @@
+<?php
+
+// 1. Satu Kondisi Positif
+echo "<h2>1. Satu Kondisi Positif</h2>";
+$stok_kain = true;
+
+if ($stok_kain) {
+    echo "Proses pemotongan pola baju dapat segera dimulai";
+}
+
+echo "<hr>";
+
+
+// 2. Satu Kondisi Negatif
+echo "<h2>2. Satu Kondisi Negatif</h2>";
+$mesin_obras = false;
+
+if (!$mesin_obras) {
+    echo "Proses obras baju harus ditunda sampai mesin diperbaiki";
+}
+
+echo "<hr>";
+
+
+// 3. Dua Kondisi
+echo "<h2>3. Dua Kondisi</h2>";
+$jahitan = "rapi";
+
+if ($jahitan == "rapi") {
+    echo "Baju langsung dikirim ke bagian finishing";
+} else {
+    echo "Baju dikembalikan ke penjahit untuk diperbaiki";
+}
+
+echo "<hr>";
+
+
+// 4. Lebih dari 2 Kondisi
+echo "<h2>4. Lebih dari 2 Kondisi</h2>";
+$kondisi = "robek";
+
+if ($kondisi == "robek") {
+    echo "Baju cacat berat, didaur ulang menjadi kain perca";
+}
+elseif ($kondisi == "tidak_rapi") {
+    echo "Baju diperbaiki di bagian jahit";
+}
+elseif ($kondisi == "belang") {
+    echo "Baju dikirim ke bagian pewarnaan ulang";
+}
+elseif ($kondisi == "ukuran") {
+    echo "Baju masuk kategori reject ukuran";
+}
+elseif ($kondisi == "kusut") {
+    echo "Baju disetrika di bagian finishing";
+}
+else {
+    echo "Kondisi tidak dikenali, laporkan ke supervisor";
+}
+
+echo "<hr>";
+
+
+// 5. Pengkondisian Bersarang (Nested)
+echo "<h2>5. Pengkondisian Bersarang</h2>";
+$jenis = "kemeja";
+$kerusakan = "sedang";
+
+if ($jenis == "kemeja") {
+
+    if ($kerusakan == "berat") {
+        echo "Kemeja didaur ulang atau dibuang";
+    } elseif ($kerusakan == "sedang") {
+        echo "Kemeja diperbaiki di bagian jahit";
+    } elseif ($kerusakan == "ringan") {
+        echo "Kemeja dirapikan dan disetrika";
+    } else {
+        echo "Kerusakan tidak dikenali, laporkan ke supervisor";
+    }
+
+}
+elseif ($jenis == "kaos") {
+
+    if ($kerusakan == "berat") {
+        echo "Kaos tidak boleh dijual (reject)";
+    } elseif ($kerusakan == "sedang") {
+        echo "Kaos dikirim ke bagian rework";
+    } elseif ($kerusakan == "ringan") {
+        echo "Kaos dicuci dan disetrika ulang";
+    } else {
+        echo "Kerusakan tidak dikenali, laporkan ke supervisor";
+    }
+
+}
+
+echo "<hr>";
+
+
+// 6. Pengkondisian DAN (AND)
+echo "<h2>6. Pengkondisian DAN (AND)</h2>";
+$pesanan = "urgent";
+$stok_kain = true;
+
+if ($pesanan == "urgent" && $stok_kain) {
+    echo "Produksi langsung dimulai (prioritas cepat)";
+}
+elseif ($pesanan == "urgent" && !$stok_kain) {
+    echo "Segera hubungi supplier untuk pengiriman ekspres";
+}
+
+echo "<hr>";
+
+
+// 7. Pengkondisian ATAU (OR)
+echo "<h2>7. Pengkondisian ATAU (OR)</h2>";
+$area = "jahit";
+$jenis_baju = "kaos";
+
+if ($area == "jahit") {
+
+    if ($jenis_baju == "kemeja" || $jenis_baju == "kaos" || $jenis_baju == "jaket") {
+        echo "Karyawan wajib memakai seragam, celemek, dan masker";
+    }
+
+}
+
+?>
